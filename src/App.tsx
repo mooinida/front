@@ -83,7 +83,7 @@ export default function RestaurantFinder() {
     try {
       const responseText = await fetchAnswer(query);
       const lines = responseText?.split(/\n{2,}/) || [];
-      setResults(lines.filter((line) => line.trim().length > 0));
+      setResults(lines.filter((line: string) => line.trim().length > 0));
     } catch (err) {
       console.error("API 오류:", err);
       alert("추천을 불러오는 중 오류가 발생했습니다.");
